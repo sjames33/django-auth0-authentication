@@ -36,9 +36,9 @@ def profile(request):
 def logout(request):
     django_logout(request)
 
-    domain=config('APP_DOMAIN')
-    client_id=config('APP_CLIENT_ID')
-    return_to='http://localhost:8000/'
+    domain=config('AUTH0_DOMAIN')
+    client_id=config('AUTH0_CLIENT_ID')
+    return_to='http://127.0.0.1:3000/'
 
     return HttpResponseRedirect(f"https://{domain}/v2/logout?client_id={client_id}&returnTo={return_to}")
 
